@@ -30,3 +30,6 @@ This project is a simple yet efficient solution by Likewise® which aims to prov
   - https://www.youtube.com/watch?v=yivyNCtVVDk
 - How to open Python .py Files with a Doubleclick:
   - https://blog.finxter.com/how-to-open-python-py-files-in-idle-with-a-doubleclick/
+
+### Additional resources
+This project is distributed under the MIT License.
