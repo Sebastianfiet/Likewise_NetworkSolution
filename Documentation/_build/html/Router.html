@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Router module &mdash; API_Documentation 1.3.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=1f29e9d3"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            API_Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Router module</a><ul>
+<li><a class="reference internal" href="#Router.Router"><code class="docutils literal notranslate"><span class="pre">Router</span></code></a><ul>
+<li><a class="reference internal" href="#Router.Router.connect_to_controller"><code class="docutils literal notranslate"><span class="pre">Router.connect_to_controller()</span></code></a></li>
+<li><a class="reference internal" href="#Router.Router.connect_to_dijkstra"><code class="docutils literal notranslate"><span class="pre">Router.connect_to_dijkstra()</span></code></a></li>
+<li><a class="reference internal" href="#Router.Router.receive_message"><code class="docutils literal notranslate"><span class="pre">Router.receive_message()</span></code></a></li>
+<li><a class="reference internal" href="#Router.Router.start"><code class="docutils literal notranslate"><span class="pre">Router.start()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">API_Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Router module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Router.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Router">
+<span id="router-module"></span><h1>Router module<a class="headerlink" href="#module-Router" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Router.Router">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Router.</span></span><span class="sig-name descname"><span class="pre">Router</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller_port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dijkstra_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dijkstra_port</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Router.html#Router"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Router.Router" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to represent the network routers.</p>
+<p>Attributes:
+- controller_host (str): The IP address of the network controller.
+- controller_port (int): The port number of the network controller.
+- dijkstra_host (str): The IP address of the Dijkstra Algorithm Server.
+- dijkstra_port (int): The port number of the Dijkstra Algorithm Server.
+- controller_socket: The socket object for communication with the network controller.
+- dijkstra_socket: The socket object for communication with the Dijkstra Algorithm Server.
+- running (bool): A flag indicating if the router is running.</p>
+<p>Methods:
+- __init__(self, controller_host, controller_port, dijkstra_host, dijkstra_port): Initializes a Router object.
+- connect_to_controller(self): Connects the router to the network controller.
+- connect_to_dijkstra(self): Connects the router to the Dijkstra Algorithm Server.
+- receive_message(self): Receives messages from the network controller and processes them.
+- start(self): Starts the router by connecting to the controller and Dijkstra server, and starts message receiving.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Router.Router.connect_to_controller">
+<span class="sig-name descname"><span class="pre">connect_to_controller</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Router.html#Router.connect_to_controller"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Router.Router.connect_to_controller" title="Link to this definition"></a></dt>
+<dd><p>Connects the router to the controller.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Router.Router.connect_to_dijkstra">
+<span class="sig-name descname"><span class="pre">connect_to_dijkstra</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Router.html#Router.connect_to_dijkstra"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Router.Router.connect_to_dijkstra" title="Link to this definition"></a></dt>
+<dd><p>Connects the router to the Dijkstra Algorithm Server (It uses BellMan Ford as well, but the name stayed).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Router.Router.receive_message">
+<span class="sig-name descname"><span class="pre">receive_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Router.html#Router.receive_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Router.Router.receive_message" title="Link to this definition"></a></dt>
+<dd><p>Receives messages from the network controller and processes them. What it does is removing one of the headers of
+the message (The header that corresponds to the router) and then send it back to the controller, so the latter
+can send that message to another router and repeat this process over and over again, until the message finally
+gets to the client.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Router.Router.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Router.html#Router.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Router.Router.start" title="Link to this definition"></a></dt>
+<dd><p>Starts the router by connecting it to the controller and Dijkstra server. This function also starts its message
+receiving capabilities.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Sebastian_Belalcazar,Angela_Becerra.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
