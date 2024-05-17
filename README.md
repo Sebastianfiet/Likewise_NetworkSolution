@@ -26,3 +26,7 @@ This project is a simple yet efficient solution by Likewise® which aims to prov
 ### Additional resources
 - Youtube video explaining our solution in depth:
   - https://www.youtube.com/watch?v=DP3rDP02lE0
+- How to install Python on your computer:
+  - https://www.youtube.com/watch?v=yivyNCtVVDk
+- How to open Python .py Files with a Doubleclick:
+  - https://blog.finxter.com/how-to-open-python-py-files-in-idle-with-a-doubleclick/
