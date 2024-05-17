@@ -9,8 +9,4 @@ This project is a simple yet efficient solution by Likewise® which aims to prov
 
 - 📃 API Documentation structure using Sphinx, this folder, among other things, includes:
   - Modules for all the components in the network.
-  - A [html](index) file to further visualize the documentation
- 
-
-
-https://github.com/Sebastianfiet/Likewise_NetworkSolution/blob/main/Documentation/_build/html/index.html
+  - A [html]([index](https://github.com/Sebastianfiet/Likewise_NetworkSolution/blob/main/Documentation/_build/html/index.html)) file to further visualize the documentation
